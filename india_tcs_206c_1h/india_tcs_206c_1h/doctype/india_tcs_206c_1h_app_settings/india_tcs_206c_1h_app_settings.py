@@ -54,7 +54,5 @@ def set_tcs(doc, action):
             "parent": doc.name,
             "idx": len(doc.taxes) + 1
         })
-        # Add a debug log to check if the charge_type is being set correctly
-        frappe.log_error("TCS Row Update: {}".format(tcs_row.as_dict()))
         doc.taxes.append(tcs_row)
         calculate_taxes_and_totals(doc)
